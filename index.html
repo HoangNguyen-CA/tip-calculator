@@ -44,12 +44,17 @@
           <div class="tip__formGroup">
             <label class="tip__label">Select Tip %</label>
             <div class="tip__btns">
-              <button class="btn">5%</button>
-              <button class="btn">10%</button>
-              <button class="btn">15%</button>
-              <button class="btn">25%</button>
-              <button class="btn">50%</button>
-              <input class="tip__input" placeholder="Custom" type="number" />
+              <button class="btn" data-tip="0.05">5%</button>
+              <button class="btn" data-tip="0.1">10%</button>
+              <button class="btn" data-tip="0.15">15%</button>
+              <button class="btn" data-tip="0.25">25%</button>
+              <button class="btn" data-tip="0.5">50%</button>
+              <input
+                class="tip__input"
+                placeholder="Custom"
+                type="number"
+                id="tipInput"
+              />
             </div>
           </div>
           <div class="tip__formGroup">
@@ -81,7 +86,7 @@
             </div>
             <p id="totalDisplay" class="display__amount">$0.00</p>
           </div>
-          <button class="btn btn--display" disabled>Reset</button>
+          <button class="btn btn--display" id="resetBtn">Reset</button>
         </div>
       </div>
     </main>

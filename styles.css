@@ -228,7 +228,7 @@ main {
   color: var(--neutral-900);
 }
 
-btn:active {
+.btn--active {
   background-color: var(--clr-primary);
   color: var(--neutral-900);
 }

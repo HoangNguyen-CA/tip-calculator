@@ -30,38 +30,58 @@
       <div class="tip">
         <div class="tip__container">
           <div class="tip__formGroup">
-            <label class="tip__label" for="billInput"> Bill </label>
-            <input type="number" class="tip__input" id="billInput" />
+            <label class="tip__label" for="billInput">
+              <span>Bill</span>
+              <span class="errorLabel" id="billError">Error</span></label
+            >
+            <input
+              type="number"
+              class="tip__input"
+              id="billInput"
+              placeholder="0"
+            />
           </div>
           <div class="tip__formGroup">
             <label class="tip__label">Select Tip %</label>
             <div class="tip__btns">
-              <button class="btn btn--select">5%</button>
-              <button class="btn btn--select">10%</button>
-              <button class="btn btn--select">15%</button>
-              <button class="btn btn--select">25%</button>
-              <button class="btn btn--select">50%</button>
-              <button class="btn btn--select">Custom</button>
+              <button class="btn">5%</button>
+              <button class="btn">10%</button>
+              <button class="btn">15%</button>
+              <button class="btn">25%</button>
+              <button class="btn">50%</button>
+              <input class="tip__input" placeholder="Custom" type="number" />
             </div>
           </div>
           <div class="tip__formGroup">
             <label class="tip__label" for="peopleInput">
-              Number of People
+              <span> Number of People </span>
+              <span class="errorLabel" id="billError">Error</span>
             </label>
-            <input type="number" class="tip__input" id="peopleInput" />
+            <input
+              type="number"
+              class="tip__input"
+              id="peopleInput"
+              placeholder="0"
+            />
           </div>
         </div>
         <div class="tip__container tip__container--dark">
-          <div>
-            <p>Tip Amount</p>
-            <small>/ person </small>
+          <div class="display__group">
+            <div class="display__labelContainer">
+              <p>Tip Amount</p>
+              <small>/ person </small>
+            </div>
+            <p id="tipDisplay" class="display__amount">$0.00</p>
           </div>
 
-          <div>
-            <p>Total</p>
-            <small>/ person </small>
+          <div class="display__group">
+            <div class="display__labelContainer">
+              <p>Total</p>
+              <small>/ person </small>
+            </div>
+            <p id="totalDisplay" class="display__amount">$0.00</p>
           </div>
-          <button class="btn">Reset</button>
+          <button class="btn btn--display" disabled>Reset</button>
         </div>
       </div>
     </main>

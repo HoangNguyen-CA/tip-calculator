@@ -6,8 +6,9 @@
 
 :root {
   --clr-primary: hsl(172, 67%, 45%);
+  --clr-error: #bf9182;
   --neutral-900: hsl(183, 100%, 15%);
-  --neutral-800: hsl(186, 14%, 43%);
+  --neutral-800: hsl(186, 30%, 43%);
   --neutral-700: hsl(184, 14%, 56%);
   --neutral-600: hsl(185, 41%, 84%);
   --neutral-200: hsl(189, 41%, 97%);
@@ -31,12 +32,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  min-width: 320px;
 }
 
 .logoContainer {
   width: 87px;
-  justify-self: flex-start;
+  margin-top: 15vh;
   margin-bottom: 5em;
 }
 
@@ -51,15 +52,18 @@ main {
   background-color: var(--neutral-100);
   border-radius: 1em;
   display: flex;
-  width: 90%;
+  width: 100%;
   max-width: 880px;
 }
 
 .tip > * + * {
-  margin-left: 2.5em;
+  margin: 0 0 0 2.5em;
 }
+
 .tip__container {
   width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .tip__container--dark {
@@ -67,6 +71,31 @@ main {
   color: var(--neutral-100);
   padding: 2em;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  :root {
+    font-size: 80%;
+  }
+  .logoContainer {
+    width: 87px;
+    margin-top: 3.5em;
+    margin-bottom: 2.5em;
+  }
+
+  .tip {
+    flex-direction: column;
+    max-width: 380px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .tip > * + * {
+    margin: 2.5em 0 0 0;
+  }
+
+  .tip__container {
+    width: 100%;
+  }
 }
 
 .tip__formGroup + .tip__formGroup {
@@ -77,6 +106,8 @@ main {
   font-weight: 600;
   color: var(--neutral-700);
   margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tip__input {
@@ -89,6 +120,33 @@ main {
 
   font-size: 1.5rem;
   border-radius: 5px;
+  text-align: right;
+
+  border-radius: 5px;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.tip__input:focus {
+  border: 2px solid var(--clr-primary);
+}
+
+.tip__input:invalid {
+  border: 2px solid var(--clr-error);
+}
+
+#billInput {
+  background-image: url(./images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 30px;
+}
+
+#peopleInput {
+  background-image: url(./images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 30px;
 }
 
 .tip__btns {
@@ -96,6 +154,49 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
 }
+
+@media only screen and (max-width: 800px) {
+  .tip__btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+}
+
+/* tip display */
+
+.display__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.display__labelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display__labelContainer > p {
+  font-weight: 600;
+}
+
+.display__labelContainer > small {
+  color: var(--neutral-700);
+}
+
+.display__amount {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+@media only screen and (max-width: 800px) {
+  .display__amount {
+    font-size: 2rem;
+  }
+}
+
 .btn {
   font-size: 1.5rem;
   font-weight: 600;
@@ -104,10 +205,47 @@ main {
   border: none;
   background-color: var(--neutral-900);
   color: var(--neutral-100);
-  padding: 0.2em 0;
+  padding: 0.4em 0;
   border-radius: 5px;
   cursor: pointer;
+
+  transition: 0.2s ease-out;
 }
 
-.btn--select {
+.btn--display {
+  background-color: var(--neutral-700);
+  width: 100%;
+  margin-top: auto;
+}
+
+.btn--display:disabled {
+  background-color: var(--neutral-800);
+  color: var(--neutral-900);
+}
+
+.btn:hover {
+  background-color: var(--neutral-600);
+  color: var(--neutral-900);
+}
+
+btn:active {
+  background-color: var(--clr-primary);
+  color: var(--neutral-900);
+}
+
+/* Misc */
+
+.errorLabel {
+  color: var(--clr-error);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
 }

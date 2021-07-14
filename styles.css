@@ -15,3 +15,99 @@
 
   font-family: 'Space Mono', monospace;
 }
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+/* main */
+
+main {
+  background-color: var(--neutral-600);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoContainer {
+  width: 87px;
+  justify-self: flex-start;
+  margin-bottom: 5em;
+}
+
+.logoContainer > img {
+  width: 100%;
+}
+
+/* tip */
+
+.tip {
+  padding: 2em;
+  background-color: var(--neutral-100);
+  border-radius: 1em;
+  display: flex;
+  width: 90%;
+  max-width: 880px;
+}
+
+.tip > * + * {
+  margin-left: 2.5em;
+}
+.tip__container {
+  width: 50%;
+}
+
+.tip__container--dark {
+  background-color: var(--neutral-900);
+  color: var(--neutral-100);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.tip__formGroup + .tip__formGroup {
+  margin-top: 2em;
+}
+
+.tip__label {
+  font-weight: 600;
+  color: var(--neutral-700);
+  margin-bottom: 5px;
+}
+
+.tip__input {
+  font-family: 'Space Mono', monospace;
+  font-weight: 600;
+  color: var(--neutral-900);
+  border: none;
+  background-color: var(--neutral-200);
+  padding: 0.2em 0.5em;
+
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.tip__btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+.btn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Space Mono', monospace;
+
+  border: none;
+  background-color: var(--neutral-900);
+  color: var(--neutral-100);
+  padding: 0.2em 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn--select {
+}

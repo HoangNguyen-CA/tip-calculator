@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: hsl(172, 67%, 45%);
+  --neutral-900: hsl(183, 100%, 15%);
+  --neutral-800: hsl(186, 14%, 43%);
+  --neutral-700: hsl(184, 14%, 56%);
+  --neutral-600: hsl(185, 41%, 84%);
+  --neutral-200: hsl(189, 41%, 97%);
+  --neutral-100: hsl(0, 0%, 100%);
+
+  font-family: 'Space Mono', monospace;
+}

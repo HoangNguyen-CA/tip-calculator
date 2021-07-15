@@ -6,9 +6,9 @@
 
 :root {
   --clr-primary: hsl(172, 67%, 45%);
-  --clr-error: #bf9182;
+  --clr-error: #f15a5a;
   --neutral-900: hsl(183, 100%, 15%);
-  --neutral-800: hsl(186, 30%, 43%);
+  --neutral-800: #0c686d;
   --neutral-700: hsl(184, 14%, 56%);
   --neutral-600: hsl(185, 41%, 84%);
   --neutral-200: hsl(189, 41%, 97%);
@@ -131,7 +131,7 @@ main {
   border: 2px solid var(--clr-primary);
 }
 
-.tip__input:invalid {
+.tip__input--invalid {
   border: 2px solid var(--clr-error);
 }
 
@@ -175,6 +175,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 1em;
 }
 
 .display__labelContainer > p {
@@ -186,6 +187,8 @@ main {
 }
 
 .display__amount {
+  max-width: 100%;
+  overflow: auto;
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--clr-primary);
@@ -213,14 +216,11 @@ main {
 }
 
 .btn--display {
-  background-color: var(--neutral-700);
+  background-color: var(--clr-primary);
+  color: var(--neutral-900);
+
   width: 100%;
   margin-top: auto;
-}
-
-.btn--display:disabled {
-  background-color: var(--neutral-800);
-  color: var(--neutral-900);
 }
 
 .btn:hover {
@@ -231,6 +231,12 @@ main {
 .btn--active {
   background-color: var(--clr-primary);
   color: var(--neutral-900);
+}
+
+.btn--display:disabled {
+  background-color: var(--neutral-800);
+  color: var(--neutral-900);
+  cursor: default;
 }
 
 /* Misc */
@@ -248,4 +254,8 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield; /* Firefox */
+}
+
+::placeholder {
+  color: var(--neutral-700);
 }
